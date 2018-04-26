@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aplicativo de Composição Corporal</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+
+    #H1{
+
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      color: #FFFFFF;
+      font-size: 37px;
+      text-shadow: -2px 0px #091034;
+      text-shadow: 0px -2px #091034;
+      text-align: center;
+
+    }
+
+    #Fonte{
+
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      color: black;
+
+    }
+
+    #Resultado{
+
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      font-size: 15px;
+      color: black;
+      text-align: center;
+
+    }
+
+    input {
+
+      border-color: #7FBD32;
+      border-radius: 20px 20px 20px 20px ;
+      border-top-color: #347B98;
+      background-color: #FFFFFF;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      color: black;
+      text-align: center;
+
+    }
+
+
+    </style>
+</head>
+<body class="w3-content" style="max-width:1300px">
+
+<!-- Titulo -->
+
+<footer class="w3-container w3-black w3-padding-16">
+  <center>
+    <h1 id="H1">Calculadora de Composição Corporal<h1>
+  </center>
+</footer>
+
+
+<!-- Masculino -->
+
+<div class="w3-row">
+
+  <div class="w3-half w3-container w3-center" style="background-color:DodgerBlue;height:1000px">
+
+    <div class="w3-padding-64">
+      <h1 id="Fonte">Masculino</h1>
+    </div>
+
+      <h3 id="Fonte">Informe os Dados Atuais:</h3>
+
+      <br>
+
+      <form id="Masculino">
+        <input id="PesoM" placeholder="Peso" >
+        <br>
+        <br>
+        <input type="number" id="IdadeM" placeholder="    Idade" >
+        <br>
+        <br>
+        <input id="Peito" placeholder=" Peitoral" >
+        <br>
+        <br>
+        <input id="Abdomen" placeholder=" Abdomen" >
+        <br>
+        <br>
+        <input  id="CoxaM" placeholder="Coxa" >
+        <br>
+        <br>
+        <input type="button" value="Calcular"  onclick="CalcMasculino()" >
+      </form>
+
+      <h3 id="Fonte">Resultado:</h3>
+
+      <br>
+
+      <form id="Resultado">
+        Percentual de Gordura:
+      <br>
+        <input name="GorduraPercentualM" readonly="true" >
+      <br>
+      <br>
+        Gordura Absoluta:
+      <br>
+        <input  name="GorduraAbsolutaM" readonly="true" >
+      <br>
+      <br>
+        Massa Magra Absoluta:
+      <br>
+        <input name="MassaMagraM" readonly="true" >
+      <br>
+      <br>
+        Massa Corporal Ideal:
+      <br>
+        <input name="MassaCorporalM" readonly="true" >
+      <br>
+      <br>
+        Massa Corporal em Excesso:
+      <br>
+        <input  name="MassaExcessoM" readonly="true" >
+      </form>
+
+
+  </div>
+
+<!-- Feminino -->
+
+  <div class="w3-half w3-container w3-center" style="background-color:Tomato;height:1000px">
+
+    <div class="w3-padding-64">
+      <h1 id="Fonte">Feminino</h1>
+    </div>
+
+      <h3 id="Fonte">Informe os Dados Atuais:</h3>
+
+      <br>
+
+      <form id="Feminino">
+        <input id="PesoF" placeholder="Peso" >
+        <br>
+        <br>
+        <input type="number" id="IdadeF" placeholder="   Idade" >
+        <br>
+        <br>
+        <input id="Triceps" placeholder="Tríceps" >
+        <br>
+        <br>
+        <input id="Supra" placeholder="  Supra-Ilíaca" >
+        <br>
+        <br>
+        <input  id="CoxaF" placeholder="Coxa" >
+        <br>
+        <br>
+        <input type="button" value="Calcular" onclick="CalcFeminino()" >
+      </form>
+
+      <h3 id="Fonte">Resultado:</h3>
+
+      <br>
+
+      <form id="Resultado">
+        Percentual de Gordura:
+      <br>
+        <input name="GorduraPercentualF" readonly="true" >
+      <br>
+      <br>
+        Gordura Absoluta:
+      <br>
+        <input  name="GorduraAbsolutaF" readonly="true" >
+      <br>
+      <br>
+        Massa Magra Absoluta:
+      <br>
+        <input name="MassaMagraF" readonly="true" >
+      <br>
+      <br>
+        Massa Corporal Ideal:
+      <br>
+        <input name="MassaCorporalF" readonly="true" >
+      <br>
+      <br>
+        Massa Corporal em Excesso:
+      <br>
+        <input  name="MassaExcessoF" readonly="true" >
+      </form>
+
+  </div>
+
+</div>
+
+<!-- Sobre -->
+
+<!--
+
+ <footer class="w3-container w3-black w3-padding-16">
+  <center>
+    <a href="https://jvitorgusmao.github.io/Sobre_mim/" target="_blank">Sobre o Desenvolvedor</a>
+  </center>
+</footer>
+
+-->
+
+</body>
+
+<script>
+
+  function CalcMasculino() {
+
+    var pesoM   = document.getElementById("PesoM").value ;
+    var idadeM  = document.getElementById("IdadeM").value ;
+    var peito   = document.getElementById("Peito").value ;
+    var abdomen = document.getElementById("Abdomen").value ;
+    var coxaM   = document.getElementById("CoxaM").value ;
+
+    var x1          = ( peito ) / 100 + ( abdomen ) / 100 + ( coxaM ) / 100 ;
+    var densM       = 1.10938 - 0.0008267 * (x1) + 0.0000016 * (x1) * 2 - 0.0002574 * (idadeM) ;
+    var gorduraM    = ( [(4.95 / densM) - 4.50] * 100 ).toFixed(2) ;
+    var gorduraAbsM = (pesoM * gorduraM) / 100 ;
+    var massaMaM    = pesoM - gorduraAbsM ;
+    var massaCorpIM = ( massaMaM / 0.85 ).toFixed(2) ;
+    var massaCorpEM = ( massaMaM - massaCorpIM ).toFixed(2) ;
+
+
+    document.querySelector("[name='GorduraPercentualM']").value =  gorduraM + " %" ;
+    document.querySelector("[name='GorduraAbsolutaM']").value   =  gorduraAbsM + " Kg" ;
+    document.querySelector("[name='MassaMagraM']").value        =  massaMaM + " Kg" ;
+    document.querySelector("[name='MassaCorporalM']").value     =  massaCorpIM + " Kg" ;
+    document.querySelector("[name='MassaExcessoM']").value      =  massaCorpEM + " Kg" ;
+    
+    
+
+}
+  
+  function CalcFeminino(){
+
+    var pesoF   = document.getElementById("PesoF").value ;
+    var idadeF  = document.getElementById("IdadeF").value ;
+    var triceps = document.getElementById("Triceps").value ;
+    var supra   = document.getElementById("Supra").value ;
+    var coxaF   = document.getElementById("CoxaF").value ;
+
+    var x2          = ( triceps ) / 100 + ( supra ) / 100 + ( coxaF ) / 100  ;
+    var densF       = 1.099421 - 0.0009929 * (x2) + 0.0000023 * (x2) * 2 - 0.0001392 * (idadeF) ;
+    var gorduraF    = ( [(4.95 / densF) - 4.50] * 100 ).toFixed(2) ;
+    var gorduraAbsF = (pesoF * gorduraF) / 100 ;
+    var massaMaF    = pesoF - gorduraAbsF ;
+    var massaCorpIF = ( massaMaF / 0.75 ).toFixed(2) ;
+    var massaCorpEF = ( massaMaF - massaCorpIF ).toFixed(2) ;
+
+
+
+    document.querySelector("[name='GorduraPercentualF']").value =  gorduraF + " %" ;
+    document.querySelector("[name='GorduraAbsolutaF']").value   =  gorduraAbsF + " Kg" ;
+    document.querySelector("[name='MassaMagraF']").value        =  massaMaF + " Kg" ;
+    document.querySelector("[name='MassaCorporalF']").value     =  massaCorpIF + " Kg" ;
+    document.querySelector("[name='MassaExcessoF']").value      =  massaCorpEF + " Kg" ;
+
+
+  }
+
+</script>
+
+</html>
