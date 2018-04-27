@@ -246,7 +246,7 @@
     var supra   = document.getElementById("Supra").value ;
     var coxaF   = document.getElementById("CoxaF").value ;
 
-    var x2          = ( triceps ) * 100 + ( supra ) * 100 + ( coxaF ) * 100  ;
+    var x2          =  triceps +  supra  +  coxaF  ;
     var densF       = 1.099421 - 0.0009929 * (x2) + 0.0000023 * (x2) * 2 - 0.0001392 * (idadeF) ;
     var gorduraF    = ( [(4.95 / densF) - 4.50] * 100 ).toFixed(2) ;
     var gorduraAbsF = (pesoF * gorduraF) / 100 ;
