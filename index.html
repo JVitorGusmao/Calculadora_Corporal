@@ -219,7 +219,7 @@
     var abdomen = document.getElementById("Abdomen").value ;
     var coxaM   = document.getElementById("CoxaM").value ;
 
-    var x1          = ( peito ) / 100 + ( abdomen ) / 100 + ( coxaM ) / 100 ;
+    var x1          = ( peito ) * 100 + ( abdomen ) * 100 + ( coxaM ) * 100 ;
     var densM       = 1.10938 - 0.0008267 * (x1) + 0.0000016 * (x1) * 2 - 0.0002574 * (idadeM) ;
     var gorduraM    = ( [(4.95 / densM) - 4.50] * 100 ).toFixed(2) ;
     var gorduraAbsM = (pesoM * gorduraM) / 100 ;
@@ -246,7 +246,7 @@
     var supra   = document.getElementById("Supra").value ;
     var coxaF   = document.getElementById("CoxaF").value ;
 
-    var x2          = ( triceps ) / 100 + ( supra ) / 100 + ( coxaF ) / 100  ;
+    var x2          = ( triceps ) * 100 + ( supra ) * 100 + ( coxaF ) * 100  ;
     var densF       = 1.099421 - 0.0009929 * (x2) + 0.0000023 * (x2) * 2 - 0.0001392 * (idadeF) ;
     var gorduraF    = ( [(4.95 / densF) - 4.50] * 100 ).toFixed(2) ;
     var gorduraAbsF = (pesoF * gorduraF) / 100 ;
